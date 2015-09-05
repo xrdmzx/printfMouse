@@ -1,0 +1,50 @@
+	    <div id="middle">
+<ul class="nav nav-pills">
+    <li><a href="quote.php">Search</a></li>
+    <li><a href="buy.php">Cages</a></li>
+    <li><a href="sell.php">Mice</a></li>
+    <li><a href="sell.php">Events</a></li>
+    <li><a href="history.php">History</a></li>
+    <li><a href="logout.php"><strong>Log Out</strong></a></li>
+</ul>
+
+<ul class="cage-grid-view">
+    <?php foreach ($cages as $cage): ?>
+	 <li>
+	    <h2><?= $cage["gene"] ?></h2>
+	    <?php foreach ($mice as $mouse): ?>		
+		<p><?= $mouse["name"] ?> </p>
+	    <?php endforeach ?>
+		
+
+    <thead>
+        <tr>
+            <th>put</th>
+            <th>a</th>
+            <th>grid</th>
+            <th>view</th>
+            <th>here</th>
+        </tr>
+    </thead>
+
+    <tbody>
+	<?php foreach ($positions as $position): ?>
+
+	    <tr>
+		<td><?= $position["symbol"] ?></td>
+		<td><?= $position["name"] ?></td>
+		<td><?= $position["shares"] ?></td>
+		<td><?= '$ ', number_format($position["price"], 2) ?></td>
+		<td><?= '$ ', number_format($position["total"], 2) ?></td>
+	    </tr>
+
+	<?php endforeach ?>
+        <tr>
+            <td colspan="4">CASH</td>
+            <td><?= "xxxx" ?> </td>
+        </tr>
+
+    </tbody>
+
+</table>
+            </div>
